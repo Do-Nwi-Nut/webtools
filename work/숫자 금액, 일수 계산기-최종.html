@@ -552,3 +552,11 @@
 </script>
 </body>
 </html>
+
+<script>
+function sendHeight() {
+    window.parent.postMessage({ type: 'resize-iframe', height: document.documentElement.scrollHeight }, '*');
+}
+window.addEventListener('load', sendHeight);
+window.addEventListener('resize', sendHeight);
+</script>
